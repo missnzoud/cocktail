@@ -1,5 +1,6 @@
 //instanciate class 
-  const ui = new UI();
+  const ui = new UI(),
+  cocktail = new CocktailAPI();
 
 
 
@@ -24,6 +25,17 @@ function getCocktails(e) {
                 //call user interface print message;
                 ui.printMessage('alert hehoooo writ somethting', 'danger');
             }else{
-                console.log('add to the rest api');
+                     //console.log('add to the rest api');
+                     cocktail.getDrinksByName( searchTerm )
+                     .then (cocktails => {
+                            //console.log(cocktails);
+                            if(cocktails.cocktails.drinks === null) {
+                                // Nothing exists
+                                ui.printMessage('There\'re no results, try a different term ', 'danger');
+                            }else{
+                                console.log(cocktails);
+                            }
+                     })
+                     
             }
 }
