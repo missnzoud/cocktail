@@ -1,4 +1,5 @@
-
+//instanciate class 
+  const ui = new UI();
 
 
 
@@ -16,11 +17,12 @@ eventListeners();
 
 function getCocktails(e) {
     e.preventDefault();
-    console.log('click');
+        console.log('click');
     const searchTerm = document.getElementById('search').value;
             //console.log(searchTerm);
             if(searchTerm === ''){
-                console.log('print error');
+                //call user interface print message;
+                ui.printMessage('alert hehoooo writ somethting', 'danger');
             }else{
                 console.log('add to the rest api');
             }
