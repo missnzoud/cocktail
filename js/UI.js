@@ -17,5 +17,13 @@ class UI {
     const reference = document.querySelector('.jumbotron h1');
     const parentNode = reference.parentElement;
     parentNode.insertBefore(div, reference);
+     // remove after 3 seconds
+     setTimeout(() => {
+        document.querySelector('.alert').remove();
+   }, 3000);
+
 }
+
+
+
 }
